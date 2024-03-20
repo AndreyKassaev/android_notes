@@ -6,4 +6,4 @@ Android note taking application. Build with Jetpack Compose.
 <img src="./assets/android_note.gif" width=200>
 
 
-[1]: <./assets/notes.apk>
+[1]: <https://kassaev.com/media/notes.apk>
