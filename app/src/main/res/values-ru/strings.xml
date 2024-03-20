@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Блокнот</string>
+    <string name="recycle_bin">Удаленные</string>
+    <string name="delete_note">Удалить?</string>
+    <string name="delete_yes">Удалить</string>
+    <string name="delete_cancel">Отмена</string>
+    <string name="delete_all_question">Удалить Все Заметки?</string>
+</resources>

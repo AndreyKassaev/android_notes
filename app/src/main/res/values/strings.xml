@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="recycle_bin">Recycle bin</string>
+    <string name="delete_note">Delete?</string>
+    <string name="delete_yes">Delete</string>
+    <string name="delete_cancel">Cancel</string>
+    <string name="delete_all_question">Delete All Notes?</string>
+</resources>
