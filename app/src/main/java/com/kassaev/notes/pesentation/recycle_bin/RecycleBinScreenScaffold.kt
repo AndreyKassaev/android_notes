@@ -14,12 +14,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -28,7 +30,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -65,6 +66,9 @@ fun RecycleBinScreenScaffold(
                 },
                 navigationIcon = {
                     IconButton(
+                        colors = IconButtonDefaults.iconButtonColors(
+                            contentColor = MaterialTheme.colorScheme.primary
+                        ),
                         onClick = {
                             scope.launch {
                                 drawerState.open()
@@ -78,12 +82,14 @@ fun RecycleBinScreenScaffold(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary
                 ),
             )
         },
         floatingActionButton = {
             FloatingActionButton(
+                contentColor = MaterialTheme.colorScheme.primary,
                 onClick = {
                     if (noteList.isNotEmpty()){
                         viewModel.openDialogFAB()
@@ -130,7 +136,7 @@ fun RecycleBinScreenScaffold(
                                 end = 8.dp,
                                 bottom = 8.dp
                             ),
-                        text = noteEntity.date.toString(),
+                        text = noteEntity.date,
                         textAlign = TextAlign.End,
                         fontSize = MaterialTheme.typography.bodyMedium.fontSize
                     )
@@ -153,6 +159,10 @@ fun RecycleBinDeleteConfirmDialog(viewModel: MainViewModel) {
             Card(
                 modifier = Modifier,
                 shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.primary,
+                )
             ) {
                 Column {
                     Text(
@@ -215,6 +225,10 @@ fun RecycleBinDeleteAllConfirmDialog(viewModel: MainViewModel) {
             Card(
                 modifier = Modifier,
                 shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.primary,
+                )
             ) {
                 Column {
                     Text(

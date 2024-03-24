@@ -2,9 +2,11 @@ package com.kassaev.notes.pesentation.main_screen
 
 import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
+import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
@@ -43,7 +45,12 @@ fun MainScreenNavigationDrawer(
                         scope.launch {
                             drawerState.close()
                         }
-                    }
+                    },
+                    colors = NavigationDrawerItemDefaults.colors(
+                        selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                        selectedTextColor = MaterialTheme.colorScheme.primary,
+                        unselectedTextColor = MaterialTheme.colorScheme.primary,
+                    )
                 )
                 NavigationDrawerItem(
                     label = {
@@ -55,7 +62,12 @@ fun MainScreenNavigationDrawer(
                         scope.launch {
                             drawerState.close()
                         }
-                    }
+                    },
+                    colors = NavigationDrawerItemDefaults.colors(
+                        selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                        selectedTextColor = MaterialTheme.colorScheme.primary,
+                        unselectedTextColor = MaterialTheme.colorScheme.primary,
+                    )
                 )
             }
         }
@@ -75,14 +87,5 @@ fun MainScreenNavigationDrawer(
                     scope
                 )
         }
-    }
-}
-
-@Composable
-fun String.toLocale(): String {
-    return when(this){
-        "main" -> stringResource(R.string.app_name)
-        "recycle_bin" -> stringResource(R.string.recycle_bin)
-        else -> {""}
     }
 }
