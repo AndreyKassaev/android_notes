@@ -1,7 +1,7 @@
 # android_notes
 Android note taking application. [Click here to get apk][1]
 
-Build with:  
+Built with:  
 Jetpack Compose  
 Compose Navigation  
 Room  
